@@ -82,3 +82,8 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+
+.wrapper{
+  @apply max-w-[1400px] px-2 md:px-4 lg:px-6
+}
