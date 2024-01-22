@@ -1,37 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokemon-finder
+# About this project
+This is a simple a PokéDex App built using Next.js and React. Uses the PokéAPI directly to fetch pkemon's data.\
+Provides Information on all 898 pokemons, Height, Weight, Abilities, Evolution Line, and Stats.\
+[live demo](https://pokemon-finder-black.vercel.app/)
+
+# Built with
+- [tailwindcss](https://tailwindcss.com/)
+- [pokeApi](https://pokeapi.co/)
+- [next.js](https://nextjs.org/)
+
+# Screenshot
+<img width="1069" alt="Skärmbild 2024-01-22 064312" src="https://github.com/EmadDev1991/pokemon-finder/assets/153786534/d1217cb9-cb04-4429-8e8b-4659a7a2ec5d">
+
+
+# Goals
+The goal of this project is to explore the newly released next.js features, such as:
+- Server actions
+- Suspense boundaries
+
+
 
 ## Getting Started
 
-First, run the development server:
+You need to install Node.js first in order to run this project.
 
+### Installation
+
+1. clone repo
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/EmadDev1991/pokemon-finder.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. navigate to project folder
+```bash
+cd pokemon-finder
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. install packages
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. run on Dev
+```bash
+npm run dev
+```
 
-## Learn More
+# License
+Distributed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# pokemon-finder
