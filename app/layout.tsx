@@ -22,11 +22,10 @@ const RootLayout = ({
       <body className={cn(" flex flex-col", inter.className)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
           disableTransitionOnChange
         >
-          <Nav/>
+          <Nav />
           {children}
         </ThemeProvider>
       </body>
