@@ -1,4 +1,5 @@
 import { getPokemonDetails } from "@/actions/pokemon";
+import EvolutionChain from "@/components/evolutionChain";
 import ImageWithFallback from "@/components/imageWithFallback";
 import StatsTable from "@/components/statsTable";
 
@@ -40,7 +41,9 @@ const PokemonDetailsPage = async ({
         </div>
         <div className="col-span-12 flex flex-col gap-6">
           <h2 className="text-xl font-bold col-span-12 pt-12">Evolution Chain</h2>
-          <div>evolution chain</div>
+          <div>
+            <EvolutionChain id= {details.id}/>
+          </div>
         </div>
       </div>
     </div>

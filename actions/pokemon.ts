@@ -52,3 +52,41 @@ export const getPokemonDetails = async (pokemonName: string) => {
 }
     return details
 }
+
+
+
+
+
+
+export const getEvolutionChain = async(id:string)=>{
+    // to get evolution chain url we need to fetch pokemon Species first
+    // make second fetch request to get evolution chain data
+
+    const pokemonSpeciesRequest:Response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`) 
+    const pokemonSpeciesData = await pokemonSpeciesRequest.json()
+
+    const evolutionChainUrl = pokemonSpeciesData.evolution_chain.url
+
+    const pokemonEvolutionChainRequest:Response  = await fetch(evolutionChainUrl)
+    const pokemonEvolutionChainData = await pokemonEvolutionChainRequest.json()
+
+    const result:string[] = [];
+
+    result.push(pokemonEvolutionChainData.chain.species.name)
+
+    if (pokemonEvolutionChainData.chain.evolves_to && pokemonEvolutionChainData.chain.evolves_to.length > 0) {
+        pokemonEvolutionChainData.chain.evolves_to.forEach((evolution:any) => {
+            result.push(evolution.species.name)
+            if (evolution.evolves_to) {
+                evolution.evolves_to.forEach((evo:any)=>{
+                    result.push(evo.species.name)
+                })
+                
+
+            }
+        });
+    }
+
+    return result
+}
+
