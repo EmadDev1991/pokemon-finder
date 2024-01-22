@@ -11,11 +11,8 @@ const PokemonDetailsPage = async ({
   params: { pokemonId: string };
 }) => {
   const { pokemonId } = params;
-  console.log(params);
-
   const details: PokemonFullDetails = await getPokemonDetails(pokemonId);
 
-  console.log("hhhhhhhh", details.abilities[0].ability.name);
   return (
     <div>
       <div className="wrapper m-auto grid grid-cols-12 gap-6 pt-10">
