@@ -1,9 +1,22 @@
-import Image from "next/image";
+import PokemonList from "@/components/pokemonList";
 
-export default function Home() {
-  return (
-    <main className=" h-full">
-     Hello app
-    </main>
-  );
+
+ type SearchParams = {
+  page: string | undefined
+  limit:string | undefined
 }
+
+interface Props {
+  searchParams : SearchParams
+}
+
+
+const Home = ({searchParams}:Props) => {
+  const {page, limit} = searchParams;
+
+  return <main className=" h-full">
+    <PokemonList page={page} limit={limit}/>
+  </main>;
+};
+
+export default Home;

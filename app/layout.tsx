@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
+import Nav from "@/components/shared/nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,16 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body className={cn(" flex flex-col", inter.className)}>
-        <div>ddddd</div>
-        {children}
-        </body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Nav/>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 };
