@@ -7,6 +7,7 @@ import PaginationButtons from "./paginationButtons";
 interface PokemonListProps {
   page: string | number | undefined;
   limit: string | number | undefined;
+
 }
 
 const PokemonList = async ({ page = 1, limit = 12 }: PokemonListProps) => {
@@ -15,14 +16,14 @@ const PokemonList = async ({ page = 1, limit = 12 }: PokemonListProps) => {
 
   const pokemonList = (await getPokemonNames(pageNumber, limitNumber)) || [];
 
-
+  
 
   return (
     <div className="wrapper m-auto pt-28">
       <PaginationButtons pageNumber={pageNumber} limitNumber={limitNumber} />
       <div className="grid grid-cols-12 gap-8">
         {pokemonList.map((pokemon) => (
-          <Suspense fallback={<CardSkeleton/>}>
+          <Suspense key={pokemon.name} fallback={<CardSkeleton/>}>
             <PokemonCard name={pokemon.name} />
           </Suspense>
         ))}

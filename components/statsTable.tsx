@@ -13,14 +13,14 @@ const StatsTable = ({ details }: { details: PokemonFullDetails }) => {
             <p className="font-bold">Abilities: </p>
             <div className="flex gap-3 flex-wrap">
               {details.abilities.map((ability: any) => (
-                <p className="mt-3 bg-secondary px-4 py-2 rounded-md">{ability.ability.name}</p>
+                <p key={ability.ability.name} className="mt-3 bg-secondary px-4 py-2 rounded-md">{ability.ability.name}</p>
               ))}
             </div>
           </div>
       </div>
       <div className="col-span-1  flex flex-col gap-4">
         {details.stats.map((stat) => (
-          <PokemonInfo name={stat.name} value={stat.base_stat} />
+          <PokemonInfo key={stat.name} name={stat.name} value={stat.base_stat} />
         ))}
       </div>
     </div>

@@ -12,7 +12,7 @@ const EvolutionChain =  async ({id}:EvolutionChainProps) => {
   return (
     <div className="grid grid-cols-12 gap-4 ">
         {evolutionChain.map((name)=>(
-            <Suspense fallback={<CardSkeleton/>}>
+            <Suspense key={name} fallback={<CardSkeleton/>}>
              <PokemonCard name={name}/>   
             </Suspense>
             
